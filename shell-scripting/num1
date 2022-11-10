@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+file="file"
+
+if [ -f "$file" ]; then
+    if [! -s "$file" ]; then
+        echo 2
+    else
+        1
+    fi
+else
+    0
+fi
