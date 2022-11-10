@@ -4,10 +4,10 @@ file="file"
 
 if [ -f "$file" ]; then
     if [! -s "$file" ]; then
-        echo 2
+        echo 1
     else
-        1
+        0
     fi
 else
-    0
+    2
 fi

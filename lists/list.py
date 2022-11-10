@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 
-class SumTwo:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-    
-    def solution(self):
-        length = len(self.a)
+nums = [1,2,5,7,8]
 
-        for i in range(length + 1):
-            for j in range(i+i, length):
-                if self.a[i] + self.b[j] == self.b:
-                    new_list = i, j
-                    return list(new_list)
-        return -1
-a = [2,7,11,15]
-b = 9
-c = SumTwo(a, b)
-print(c.solution())
+target = 3
+
+def twoSum(nums, target):
+    prevMap = {} # val : index
+    for i, n in enumerate(nums):
+        if target - n in prevMap:
+            return [prevMap[target - n], i]
+        prevMap[n] = i
+
+result = twoSum(nums, target)
+print(result)
